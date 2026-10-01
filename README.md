@@ -3,4 +3,4 @@ Pro účely předmětu PMA - verze 2026.
 
 ## Seznam cvičení
 
-2026-10-01 - Hodk kostkou
+2026-10-01 - Hod kostkou
