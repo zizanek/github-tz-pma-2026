@@ -1,6 +1,7 @@
 package com.example.myapp004objednavka
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         // 2. Binding - nafouknutí (inflate) layoutu do binding instance
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // 3. Nastavení kořenového pohledu (root) do okna aktivity
+        // 3. Binding - Nastavení kořenového pohledu (root) do okna aktivity
         setContentView(binding.root)
 
         //setContentView(R.layout.activity_main)
@@ -31,7 +32,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // 4. Binding - přímý a bezpečný přístup k prvkům layoutu přes binding.<id>
         binding.btnOrder.setOnClickListener {
+
+            // Zjistí vybraný RadioButton ze skupiny rgBikes; pokud není vybraný žádný, jako výchozí se použije rbBike1
             val bike = when (binding.rgBikes.checkedRadioButtonId) {
                 binding.rbBike1.id -> binding.rbBike1 // Pokud sedí ID prvního tlačítka, použij rbBike1
                 binding.rbBike2.id -> binding.rbBike2
@@ -51,8 +55,12 @@ class MainActivity : AppCompatActivity() {
 
             binding.tvOrder.text = orderText
 
-            // Změna obrázku v závislosti na vybraném radiobuttonu
+            Toast.makeText(
+                this,
+                "Objednávka kola ${bike.text} byla úspěšně odeslána!", Toast.LENGTH_SHORT
+            ).show()
 
+            // Změna obrázku v závislosti na vybraném radiobuttonu
             binding.rbBike1.setOnClickListener {
                 binding.ivBike.setImageResource(R.drawable.oiz_m10_tr)
             }
