@@ -8,12 +8,123 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvHeaderTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="Objednávka kola"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOrderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Jaké kolo chcete objednat?"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeaderTitle" />
+
+    <RadioGroup
+        android:id="@+id/rgBikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOrderTitle" >
+
+        <RadioButton
+            android:id="@+id/rbBike1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oiz M10"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/rbBike2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oiz M20" />
+
+        <RadioButton
+            android:id="@+id/rbBike3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oiz M30" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbFork"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Lepší vidlice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgBikes" />
+
+    <CheckBox
+        android:id="@+id/cbSaddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Lepší sedlo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbFork" />
+
+    <CheckBox
+        android:id="@+id/cbHandlebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Lepší říditka"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbSaddle" />
+
+    <TextView
+        android:id="@+id/tvTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="64dp"
+        android:background="#AED581"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Cena: 0 Kč"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cbHandlebar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cbFork" />
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Objednat"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalPrice" />
+
+    <ImageView
+        android:id="@+id/ivBike"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/oiz_m10_tr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOrder" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
