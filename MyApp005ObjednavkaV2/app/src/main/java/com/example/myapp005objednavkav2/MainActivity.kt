@@ -25,5 +25,30 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Zavoláme hned po startu, aby se zobrazila výchozí cena vybraného kola
+        updatePrice()
+
+    }
+
+    private fun updatePrice() {
+        var totalPrice = 0;
+
+        // 1. Zjištění základní ceny vybraného kola
+        totalPrice += when (binding.rgBikes.checkedRadioButtonId) {
+            binding.rbBike1.id -> 135000
+            binding.rbBike2.id -> 115000
+            binding.rbBike3.id -> 95000
+            else -> 0
+        }  
+
+        // 2. Přičtení přípatkové výbavy
+        if(binding.cbFork.isChecked) totalPrice += 5000
+        if(binding.cbSaddle.isChecked) totalPrice += 1500
+        if(binding.cbHandlebar.isChecked) totalPrice += 2500
+
+        // 3. Zobrazení výsledku v barevném textview
+        binding.tvTotalPrice.text = "Celkem: $totalPrice Kč"
+
     }
 }
