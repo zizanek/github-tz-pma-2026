@@ -29,6 +29,17 @@ class MainActivity : AppCompatActivity() {
         // Zavoláme hned po startu, aby se zobrazila výchozí cena vybraného kola
         updatePrice()
 
+        // Nastavení listeneru na změny pro RadioGroup (výběr kola)
+        binding.rgBikes.setOnCheckedChangeListener { _, _ -> updatePrice()  }
+
+        // Nastavení listeneru na změny pro Checkboxy (příplatkový výbava)
+        binding.cbFork.setOnClickListener { updatePrice() }
+        binding.cbSaddle.setOnClickListener { updatePrice() }
+        binding.cbHandlebar.setOnClickListener { updatePrice() }
+        
+
+
+
     }
 
     private fun updatePrice() {
@@ -40,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             binding.rbBike2.id -> 115000
             binding.rbBike3.id -> 95000
             else -> 0
-        }  
+        }
 
         // 2. Přičtení přípatkové výbavy
         if(binding.cbFork.isChecked) totalPrice += 5000
