@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:text="Toto je fragment B"
         android:textSize="36sp"
-        android:background="#FFAB91"/>
+        android:background="#FFAB91"
+        android:padding="16dp" />
 
 </FrameLayout>

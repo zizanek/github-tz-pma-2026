@@ -10,8 +10,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,19 +20,19 @@
 
         <Button
             android:id="@+id/btnFragmentA"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:text="Zobrazit Fragment A"/>
+            android:text="Zobrazit Fragment A" />
 
         <Button
             android:id="@+id/btnFragmentB"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_weight="1"
-            android:layout_width="0dp"
-            android:text="Zobrazit Fragment B"/>
+            android:text="Zobrazit Fragment B" />
     </LinearLayout>
 
     <!-- Zde se budou dynamicky zobrazovat naše Fragmenty -->
