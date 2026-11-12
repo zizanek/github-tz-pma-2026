@@ -1,5 +1,6 @@
 package com.example.myapp009amynotehub
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }*/
 
+        // Po kliknutí na FAB otevře AddNoteActivity
+        binding.fabAddNote.setOnClickListener {
+            val intent = Intent(this, AddNoteActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
